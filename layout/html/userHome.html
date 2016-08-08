@@ -1,0 +1,34 @@
+<!Doctype HTML>
+<html ng-app>
+
+<head>
+    <link rel="shortcut icon" href="/images/Install-MovieFlix-Kodi-Addon.ico" />
+    <title>MovieFlix - Enjoy your movie!!</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-content" ng-controller="menuController as menuCtrl">
+            <div class="col-xs-12">
+                <div class="media">
+                    <ul class="topnav" id="myTopnav">
+                        <a href="index.html"><img class="logo" src="/images/LogoMakr.png" /></a>
+                        <li><a href="userHome.html">Home</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about">About</a></li>
+                        <a class="btn btn-primary" href="index.html" role="button" id="button1">Log Out</a>
+                        <li class="icon"> <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Welcome {{firstname lastname}}!</h1>
+    <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.14.1/lodash.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="/styles/userHome.css" rel="stylesheet" type="text/css" />
+    </body>
+    
+</html>

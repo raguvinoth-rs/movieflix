@@ -1,0 +1,129 @@
+body {
+    background-image: url("/images/Avatar.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: aliceblue;
+}
+
+.innerBlock {
+    background: rgba(181, 176, 176, 0.5);    /* 40% opaque red */
+  position: absolute;
+  top: 250px;
+  left: 1250px;
+  color: ghostwhite;
+    width: 500px;
+    height: auto;
+    font-size: 25px;
+}
+
+.loginBlock{
+    background: rgba(181, 176, 176, 0.5);    /* 40% opaque red */
+  position: absolute;
+  top: 350px;
+  left: 1250px;
+  color: ghostwhite;
+    width: 500px;
+    height: auto;
+    font-size: 25px;
+}
+
+.enjoy{
+     background: rgba(165, 21, 21, 0.4);
+}
+
+span {
+   /* background: rgba(181, 176, 176, 0.5);*/    /* 40% opaque */
+  position: absolute;
+  top: 180px;
+  left: 150px;
+  color: ghostwhite;
+    width: 1000px;
+    height: auto;
+    font-size: 25px;
+}
+
+.mySlides{
+    width: 1000px;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+#button2{
+    font-size: 25px
+}
+
+.logo {
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.logo:hover {
+    background-color: aliceblue;
+    float: left;
+}
+
+#button1{
+    position: relative;
+    float: right;
+    top: auto;
+    border: none;
+    display: inline-block;
+    font-size: 28px;
+    border-radius: 2px;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Float the list items side by side */
+ul.topnav li {float: left;}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+
+ul.topnav li a:hover {background-color: #555;}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}

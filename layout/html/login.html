@@ -1,0 +1,62 @@
+<!Doctype HTML>
+<html ng-app>
+
+<head>
+    <link rel="shortcut icon" href="/images/Install-MovieFlix-Kodi-Addon.ico" />
+    <title>MovieFlix - Enjoy your movie!!</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-content" ng-controller="menuController as menuCtrl">
+            <div class="col-xs-12">
+                <div class="media">
+                    <ul class="topnav" id="myTopnav">
+                        <a href="index.html"><img class="logo" src="/images/LogoMakr.png"/></a>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about">About</a></li>
+                        <!--<a class="btn btn-primary" href="#" role="button" id="button1">Log In</a>-->
+                        <li class="icon"> <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <span>
+        <iframe width="1000" height="700" src="https://www.youtube.com/embed/videoseries?list=PLgs02xHBGEo-BRlm4T611w0BMHhdgPsVD&autoplay=1" frameborder="0" allowfullscreen></iframe>
+    </span>
+    
+    
+    <div>
+        <block class="loginBlock">
+            <div ng-controller="MainController as mainVm">
+                <header ng-include="'heading.tmpl'"></header>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <center><h1 class="enjoy">** Log In **</h1></center>
+                            <form ng-submit="mainVm.addUser()">
+                                <div class="form-group">
+                                    <label for="city">Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="Username" ng-model="mainVm.newUser.username"> </div>
+                                <div class="form-group">
+                                    <label for="company">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password" ng-model="mainVm.newUser.password"> </div>
+                                <center><a class="btn btn-primary" href="userHome.html" role="button" id="button2">Log In</a></center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </block>
+    </div>
+    <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.14.1/lodash.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="/styles/index.css" rel="stylesheet" type="text/css" /> </body>
+
+</html>

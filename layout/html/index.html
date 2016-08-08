@@ -1,0 +1,99 @@
+<!Doctype HTML>
+<html ng-app>
+
+<head>
+    <link rel="shortcut icon" href="/images/Install-MovieFlix-Kodi-Addon.ico" />
+    <title>MovieFlix - Enjoy your movie!!</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-content" ng-controller="menuController as menuCtrl">
+            <div class="col-xs-12">
+                <div class="media">
+                    <ul class="topnav" id="myTopnav">
+                        <a href="index.html"><img class="logo" src="/images/LogoMakr.png" /></a>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#movies">Movies</a></li>
+                        <li><a href="#tvshows">TV Shows</a></li>
+                        <li><a href="#about">About</a></li> 
+                        <a class="btn btn-primary" href="login.html" role="button" id="button1">Log In</a>
+                        <li class="icon"> <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <block class="outerBlock"> <span>
+       <center><h1 class="enjoy"> Enjoy Movies @ MovieFlix</h1></center>
+       <div class="w3-content w3-section" style="max-width:1000px"> 
+    <img class="mySlides" src="/images/finding-dory.jpg" style="width:100%"> 
+    <img class="mySlides" src="/images/ice-age-collision-course-trailer-poster.jpg" style="width:100%"> 
+    <img class="mySlides" src="/images/secret-life-of-pets.jpg" style="width:100%"> 
+    <img class="mySlides" src="/images/jason_bourne.jpg" style="width:100%"> 
+    <img class="mySlides" src="/images/jl.jpg" style="width:100%"> 
+    <img class="mySlides" src="/images/lights-out.jpg" style="width:100%"> 
+    <img class="mySlides" src="/images/star-trek-beyond.jpg" style="width:100%"> 
+    <img class="mySlides" src="/images/Suicide-Squad-Logo.jpg" style="width:100%"> </div>
+
+        <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3500); // Change image every 5 seconds
+}
+</script>
+    </span>
+    <div>
+        <block class="innerBlock">
+            <div ng-controller="MainController as mainVm">
+                <header ng-include="'heading.tmpl'"></header>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <center><h1 class="enjoy">** Sign Up here! **</h1></center>
+                            <form name="myForm" ng-submit="mainVm.addUser()">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" required class="form-control" id="firstName" placeholder="First Name" ng-model="mainVm.newUser.firstName"> </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" required class="form-control" id="lastName" placeholder="Last Name" ng-model="mainVm.newUser.lastName"> </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" required class="form-control" id="email" placeholder="Email" ng-model="mainVm.newUser.email"> </div>
+                                <div class="form-group">
+                                    <label for="city">Username</label>
+                                    <input type="text" required class="form-control" id="username" placeholder="Username" ng-model="mainVm.newUser.username"> </div>
+                                <div class="form-group">
+                                    <label for="company">Password</label>
+                                    <input type="password" required class="form-control" id="password" placeholder="Password" ng-model="mainVm.newUser.password"> </div>
+                                <center><a class="btn btn-primary" href="login.html" role="button" id="button2" onclick="submit()" >Sign Up</a></center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </block>
+    </div>
+</block>
+    
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.14.1/lodash.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="/styles/index.css" rel="stylesheet" type="text/css" />
+    
+    
+    </body>
+
+</html>
