@@ -6,10 +6,8 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -19,7 +17,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 @Entity
 @Table
 @NamedQueries({ 
-	@NamedQuery(name = "Stars.findByMovie", query = "SELECT s FROM Stars s WHERE s.moviId=:pMovieId"),
+	/*@NamedQuery(name = "Stars.findByMovie", query = "SELECT s FROM Stars s WHERE s.moviId=:pMovieId"),*/
 	@NamedQuery(name = "Stars.findById", query = "SELECT s FROM Stars s WHERE s.id=:pStarId"),
 })
 public class Stars {
@@ -33,10 +31,10 @@ public class Stars {
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<String> actor;
 	
-	@OneToOne
+	/*@OneToOne
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@JoinColumn(name = "movieId")
-	private Movies movie;
+	private Movies movie;*/
 	
 	public String getId() {
 		return id;
@@ -44,12 +42,12 @@ public class Stars {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public Movies getMovie() {
+	/*public Movies getMovie() {
 		return movie;
 	}
 	public void setMovie(Movies movie) {
 		this.movie = movie;
-	}
+	}*/
 	public List<String> getActor() {
 		return actor;
 	}
@@ -58,7 +56,7 @@ public class Stars {
 	}
 	@Override
 	public String toString() {
-		return "Actors [id=" + id + ", actor=" + actor + ", movie=" + movie + "]";
+		return "Actors [id=" + id + ", actor=" + actor + "]";
 	}
 	
 }

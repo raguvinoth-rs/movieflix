@@ -16,10 +16,10 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table
-@NamedQueries({
+/*@NamedQueries({
 	@NamedQuery(name="Comments.findMovieComments",query = "Select c from Comment c where c.movieId = :pMovieId"),
 	@NamedQuery(name="Comments.findCommentById",query = "Select c from Comment c where c.id = :pCommentId"),
-})
+})*/
 public class Comments {
 	@Id
 	@GenericGenerator(name="customUUID" , strategy = "uuid2")

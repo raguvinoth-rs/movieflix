@@ -3,21 +3,17 @@ package io.egen.movieflix.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table
-@NamedQueries({ 
+/*@NamedQueries({ 
 	@NamedQuery(name = "Directors.findByMovie", query = "SELECT d FROM Directors d WHERE d.movieId=:pMovieId"),
-})
+})*/
 public class Director {
 	
 	@Id
@@ -26,10 +22,9 @@ public class Director {
 	private String id;
 	private String directorName;
 	
-	@OneToOne
+	/*@OneToMany
 	@LazyCollection(LazyCollectionOption.FALSE)
-	@JoinColumn(name = "movieId")
-	private Movies movie;
+	private Movies movie;*/
 	
 	public String getId() {
 		return id;
@@ -43,15 +38,15 @@ public class Director {
 	public void setDirectorName(String directorName) {
 		this.directorName = directorName;
 	}
-	public Movies getMovie() {
+	/*public Movies getMovie() {
 		return movie;
 	}
 	public void setMovie(Movies movie) {
 		this.movie = movie;
-	}
+	}*/
 	@Override
 	public String toString() {
-		return "Director [id=" + id + ", directorName=" + directorName + ", movie=" + movie + "]";
+		return "Director [id=" + id + ", directorName=" + directorName + "]";
 	}
 	
 }

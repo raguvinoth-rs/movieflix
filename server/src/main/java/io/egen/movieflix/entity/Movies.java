@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -22,11 +23,12 @@ import org.hibernate.annotations.LazyCollectionOption;
 @Table
 @NamedQueries({ @NamedQuery(name = "Movies.findAll", query = "SELECT m FROM Movies m ORDER BY m.title ASC"),
 		@NamedQuery(name = "Movies.findByYear", query = "SELECT m FROM Movies m WHERE m.year=:pYear"),
-		@NamedQuery(name = "Movies.findByDirector", query = "SELECT m FROM Movies m WHERE m.director.name=:pDirectorName"),
-		@NamedQuery(name = "Movies.findByActor", query = "SELECT m FROM Movies m WHERE m.star.actor=:pActorName"),
-		@NamedQuery(name = "Movies.findByGenre", query = "Select m from Movie m order by m.genreType=:pGenreType"),
+		@NamedQuery(name = "Movies.findById", query = "SELECT m FROM Movies m WHERE m.id=:pId"),
+		/*@NamedQuery(name = "Movies.findByDirector", query = "SELECT m FROM Movies m WHERE m.director.id=:pDirectorId"),*/
+		/*@NamedQuery(name = "Movies.findByActor", query = "SELECT m FROM Movies m WHERE m.star.actor=:pActorName"),*/
+		/*@NamedQuery(name = "Movies.findByGenre", query = "Select m from Movie m order by m.genreType=:pGenreType"),*/
 		@NamedQuery(name = "Movies.sortByYear", query = "Select m from Movies m order by m.year DESC"),
-		@NamedQuery(name = "Movies.sortByRating", query = "Select m from Movies m order by m.ratings.rating DESC"), })
+		/*@NamedQuery(name = "Movies.sortByRating", query = "Select m from Movies m order by m.ratings.rating DESC")*/ })
 public class Movies {
 
 	@Id
@@ -43,35 +45,35 @@ public class Movies {
 
 	private int year;
 
-	@OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
+	/*@OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private Stars star;
+	private Stars star;*/
 
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToOne
-	private Director director;
+	/*@LazyCollection(LazyCollectionOption.FALSE)
+	@ManyToOne
+	@JoinColumn(name = "directorId")
+	private Director director;*/
 
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@ManyToMany
-	@JoinColumn(name = "genreId, genreType")
 	private List<Genre> genre;
 
-	@LazyCollection(LazyCollectionOption.FALSE)
+	/*@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-	private Ratings ratings;
+	private Ratings ratings;*/
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Comments> comments;
 
-	public List<Comments> getComments() {
+	/*public List<Comments> getComments() {
 		return comments;
 	}
 
 	public void setComments(List<Comments> comments) {
 		this.comments = comments;
 	}
-
+*/
 	public String getMovieId() {
 		return movieId;
 	}
@@ -136,7 +138,13 @@ public class Movies {
 		this.year = year;
 	}
 
-	public Director getDirector() {
+	@Override
+	public String toString() {
+		return "Movies [movieId=" + movieId + ", title=" + title + ", rated=" + rated + ", runTime=" + runTime
+				+ ", plot=" + plot + ", language=" + language + ", poster=" + poster + ", year=" + year + "]";
+	}
+
+	/*public Director getDirector() {
 		return director;
 	}
 
@@ -166,15 +174,9 @@ public class Movies {
 
 	public void setStar(Stars star) {
 		this.star = star;
-	}
+	}*/
 
-	@Override
-	public String toString() {
-		return "Movies [movieId=" + movieId + ", title=" + title + ", rated=" + rated + ", runTime=" + runTime
-				+ ", plot=" + plot + ", language=" + language + ", poster=" + poster + ", year=" + year + ", star="
-				+ star + ", director=" + director + ", genre=" + genre + ", ratings=" + ratings + ", comments="
-				+ comments + "]";
-	}
+	
 
 	
 

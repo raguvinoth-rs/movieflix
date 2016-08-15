@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
@@ -17,7 +16,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 @Entity
 @Table
 @NamedQueries({
-	@NamedQuery(name="Ratings.findMovieRatings",query = "Select r from Ratings r where r.movieId = :pMovieId"),
+	/*@NamedQuery(name="Ratings.findMovieRatings",query = "Select r from Ratings r where r.movieId = :pMovieId"),*/
 })
 public class Ratings {
 	
@@ -32,10 +31,10 @@ public class Ratings {
 	@JoinColumn(name = "userId")
 	private Users users;
 	
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@ManyToOne
+	/*@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToOne
 	@JoinColumn(name = "movieId")
-	private Movies movies;
+	private Movies movies;*/
 	
 	public String getId() {
 		return id;
@@ -55,16 +54,16 @@ public class Ratings {
 	public void setUsers(Users users) {
 		this.users = users;
 	}
-	public Movies getMovies() {
+	/*public Movies getMovies() {
 		return movies;
 	}
 	public void setMovies(Movies movies) {
 		this.movies = movies;
-	}
+	}*/
 	
 	@Override
 	public String toString() {
-		return "Ratings [id=" + id + ", rating=" + rating + ", users=" + users + ", movies=" + movies + "]";
+		return "Ratings [id=" + id + ", rating=" + rating + ", users=" + users + /*", movies=" + movies +*/ "]";
 	}
 
 }

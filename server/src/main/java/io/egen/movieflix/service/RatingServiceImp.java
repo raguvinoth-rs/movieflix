@@ -30,15 +30,15 @@ public class RatingServiceImp implements RatingService {
 	@Override
 	@Transactional
 	public Ratings add(String movieId, Ratings rating) {
-		Movies movie = mRepo.findOne(rating.getMovies().getMovieId());
+		/*Movies movie = mRepo.findOne(rating.getMovies().getMovieId());*/
 		Users user = uRepo.findById(rating.getUsers().getUserId());
-		if (movie == null) {
+		/*if (movie == null) {
 			throw new MovieNotFoundException("Movie not found");
-		}
+		}*/
 		if (user == null) {
 			throw new UserNotFoundException("User not found");
 		}
-		rating.setMovies(movie);
+		/*rating.setMovies(movie);*/
 		rating.setUsers(user);
 		return repository.add(rating);
 	}
@@ -46,15 +46,15 @@ public class RatingServiceImp implements RatingService {
 	@Override
 	@Transactional
 	public Ratings update(String movieId, Ratings rating) {
-		Movies movie = mRepo.findOne(rating.getMovies().getMovieId());
+		/*Movies movie = mRepo.findOne(rating.getMovies().getMovieId());*/
 		Users user = uRepo.findById(rating.getUsers().getUserId());
-		if (movie == null) {
+		/*if (movie == null) {
 			throw new MovieNotFoundException("Movie not found");
-		}
+		}*/
 		if (user == null) {
 			throw new UserNotFoundException("User not found");
 		}
-		rating.setMovies(movie);
+		/*rating.setMovies(movie);*/
 		rating.setUsers(user);
 		return repository.update(rating);
 	}
