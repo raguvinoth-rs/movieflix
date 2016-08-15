@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+</head>
+<body>
+<div class="container">
+    <div class = "header">
+        <p id = "content">Movieflix</p>
+    </div>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <div class = "movies">
+                <h1> Movies </h1>
+                <div class = "row">
+                    <div class="col-xs-6" ng-repeat="movies in moviesVm.movies|limitTo:5">
+                        <a href = "#/movies/findById/{{movies.id}}"><h3>{{movies.title}}</h3></a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a href = "#/movies/findByYear/{{movies.year}}" ><h3>{{movies.title}}</h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel = "stylesheet" href = "home.tmpl.css">
+</body>
+</html>

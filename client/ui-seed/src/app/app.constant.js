@@ -2,9 +2,9 @@
   'use strict';
 
   angular
-    .module('plunker')
+    .module('movieflix')
     .constant('CONFIG', {
-      'API_HOST': 'http://mocker.egen.io'
+      'API_HOST': 'http://localhost:8085/movieflix/api'
     });
 
 })();

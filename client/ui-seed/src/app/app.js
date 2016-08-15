@@ -2,29 +2,29 @@
   'use strict';
 
   angular
-    .module('plunker', ['ngRoute'])
+    .module('movieflix', ['ngRoute'])
     .config(moduleConfig);
 
   function moduleConfig($routeProvider) {
 
     $routeProvider
-      .when('/users', {
-        templateUrl: 'app/views/users.tmpl.html',
-        controller: 'UsersController',
-        controllerAs: 'usersVm'
+      .when('/movies/findById/:id', {
+        templateUrl: 'app/views/movies.tmpl.html',
+        controller: 'MoviesDetailController',
+        controllerAs: 'moviesDetailVm'
       })
-      .when('/users/:id', {
-        templateUrl: 'app/views/user-detail.tmpl.html',
-        controller: 'UserDetailController',
-        controllerAs: 'userDetailVm'
+      .when('/movies', {
+        templateUrl: 'app/views/movies.tmpl.html',
+        controller: 'MoviesController',
+        controllerAs: 'moviesVm'
       })
-      .when('/resources', {
-        templateUrl: 'app/views/resources.tmpl.html',
-        controller: 'ResourcesController',
-        controllerAs: 'resourcesVm'
+      .when('/movies/findByYear/:year', {
+        templateUrl: 'app/views/movies.tmpl.html',
+        controller: 'MoviesDetailController',
+        controllerAs: 'moviesDetailVm'
       })
       .otherwise({
-        redirectTo: '/users'
+        redirectTo: '/movies'
       });
   }
 

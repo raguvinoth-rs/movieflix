@@ -1,0 +1,14 @@
+.header{
+    height:70px;
+    width:100%;
+    background-color: rgba(49, 49, 49, 0.64);
+    margin-top:2px;
+    border:1px solid;
+    color: #ff4136;
+}
+#content{
+    color: #ff4136;
+    text-align:center;
+    padding:3px;
+    font-size:3.0vw;
+}
